@@ -11,12 +11,13 @@ struct ContentView: View {
     var body: some View {
         TabView {
             Tab("Home", systemImage: "house") {
-                Text("Главная")
+                MainView()
             }
             Tab("Избранное", systemImage: "heart.fill") {
-                Text("Избранное")
+                FavoritesView()
             }
             Tab("Добавить", systemImage: "plus.circle.fill") {
+                
             }
             Tab("Сообщения", systemImage: "message.fill") {
                 
