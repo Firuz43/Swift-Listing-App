@@ -17,6 +17,11 @@ struct ContentView: View {
                 Text("Избранное")
             }
             Tab("Добавить", systemImage: "plus.circle.fill") {
+            }
+            Tab("Сообщения", systemImage: "message.fill") {
+                
+            }
+            Tab("Профиль", systemImage: "person.fill") {
                 
             }
         }
