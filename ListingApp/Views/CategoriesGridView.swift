@@ -17,7 +17,12 @@ struct CategoriesGridView: View {
         CategoryItem(title: "Все рубрики", iconName: "square.grid.3x3.fill")
     ]
     
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 3)
+//    let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 3)
+    let columns = [
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
+    ]
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10) {
