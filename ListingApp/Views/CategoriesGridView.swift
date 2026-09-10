@@ -20,7 +20,24 @@ struct CategoriesGridView: View {
     let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 3)
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVGrid(columns: columns, spacing: 10) {
+            ForEach(categories) {category in
+                VStack(spacing: 8) {
+                    Image(systemName: category.iconName)
+                        .font(.title2)
+                        .foregroundStyle(.blue)
+                    Text(category.title)
+                        .font(.caption)
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.white)
+                }
+                .frame(maxWidth: .infinity, minHeight: 70)
+                .padding(8)
+                .background(Color(white: 0.15))
+                .cornerRadius(12)
+            }
+        }
+        .padding(.horizontal)
     }
 }
 
