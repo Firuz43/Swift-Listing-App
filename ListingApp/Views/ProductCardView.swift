@@ -11,26 +11,28 @@ struct ProductCardView: View {
     let item: ListingItem
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Image(systemName: item.imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 160, height: 120)
-                .background(Color.gray.opacity(0.3))
-                .cornerRadius(12)
-                .clipped()
-            
-            Text(item.price)
-                .font(.headline)
-                .bold()
-                .foregroundStyle(.white)
-            
-            Text(item.title)
-                .font(.caption)
-                .foregroundStyle(.gray)
-                .lineLimit(2)
+        NavigationLink(destination: ProductDetailView(item: item)) {
+            VStack(alignment: .leading, spacing: 6) {
+                Image(systemName: item.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 160, height: 120)
+                    .background(Color.gray.opacity(0.3))
+                    .cornerRadius(12)
+                    .clipped()
+                
+                Text(item.price)
+                    .font(.headline)
+                    .bold()
+                    .foregroundStyle(.white)
+                
+                Text(item.title)
+                    .font(.caption)
+                    .foregroundStyle(.gray)
+                    .lineLimit(2)
+            }
+            .frame(width: 160)
         }
-        .frame(width: 160)
     }
 }
 
@@ -66,7 +68,9 @@ struct SectionRowView: View {
 }
 
 #Preview {
-    ProductCardView(item: ListingItem(title: "Notebook", price: "5000", imageName: "heart.fill"))
-    SectionRowView(sectionTitle: "Notebook", items: [ListingItem(title: "Notebook", price: "5500", imageName: "heart.fill"), ListingItem(title: "Пуфик мягкий", price: "800 c.", imageName: "chair.fill")
-])
+//    ProductCardView(item: ListingItem(title: "Notebook", price: "5000", imageName: "heart.fill"))
+//    SectionRowView(sectionTitle: "Notebook", items: [ListingItem(title: "Notebook", price: "5500", imageName: "heart.fill"), ListingItem(title: "Пуфик мягкий", price: "800 c.", imageName: "chair.fill")
+//])
+    
+    MainView()
 }

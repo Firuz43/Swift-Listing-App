@@ -27,19 +27,21 @@ struct CategoriesGridView: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10) {
             ForEach(categories) {category in
-                VStack(spacing: 8) {
-                    Image(systemName: category.iconName)
-                        .font(.title2)
-                        .foregroundStyle(.blue)
-                    Text(category.title)
-                        .font(.caption)
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.white)
+                NavigationLink(destination: CategoryDetailView(category: category)) {
+                    VStack(spacing: 8) {
+                        Image(systemName: category.iconName)
+                            .font(.title2)
+                            .foregroundStyle(.blue)
+                        Text(category.title)
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.white)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 70)
+                    .padding(8)
+                    .background(Color(white: 0.15))
+                    .cornerRadius(12)
                 }
-                .frame(maxWidth: .infinity, minHeight: 70)
-                .padding(8)
-                .background(Color(white: 0.15))
-                .cornerRadius(12)
             }
         }
         .padding(.horizontal)
