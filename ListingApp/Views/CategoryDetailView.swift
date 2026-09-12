@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryDetailView: View {
     let category: CategoryItem
-    
+    //';
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
